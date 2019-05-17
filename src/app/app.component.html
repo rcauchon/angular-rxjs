@@ -3,21 +3,78 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <div class="container">
-<h2>Here are some links to help you start: </h2>
 
-<button class="btn btn-success" data-toggle="modal" data-target="#myModal">Click</button>
+  <button class="btn btn-success" data-toggle="modal" data-target="#myModal">Click</button>
+  <div class="row p-2" *ngIf="msg.name">
+    <div class="alert alert-{{msg.status}}">
+        <strong>{{msg.name}}!</strong> Receiving message: {{ msg.desc }}.
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+        <p>Food Uppercase</p>
+      <ul>
+        <li *ngFor="let food of foods">
+          {{ food }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-2">
+        <p>Foods Operatos</p>
+      <ul>
+        <li *ngFor="let food of foodsVowel">
+          {{ food }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-2">
+        <p>Food Async URL</p>
+        <ul>
+          <li *ngFor="let food of foodsjson">
+            {{ food.id }}  {{ food.name}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-2">
+          <p>Elapse 1 sec</p>
+          <ul>
+            <li *ngFor="let food of foodsE">
+              {{ food }}
+            </li>
+          </ul>
+      </div>
+      <div class="col-2">
+          <p>Resubcribe</p>
+          <ul>
+            <li *ngFor="let food of foodsR">
+              {{ food }}
+            </li>
+          </ul>
+      </div>
+      <div class="col-2">
+        <p>Resubcribe when</p>
+        <ul>
+          <li *ngFor="let food of foodsRW">
+            {{ food }}
+          </li>
+        </ul>
+    </div>
+  </div>
+  
 </div>
+<app-food-list></app-food-list>
+
 
 <div id="myModal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content">
-     <div class="modal-header">
+      <div class="modal-header">
         <h5 class="modal-title ">Title</h5>
-        <button type="button" class="close" data-dismiss="modal" >
-            <span aria-hidden="true">&times;</span>
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
